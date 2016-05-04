@@ -1,5 +1,33 @@
 <!-- The create article view -->
 <section data-ng-controller="ArticlesController">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/#!/">Project name</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<form class="navbar-form navbar-right">
+					<div data-ng-show="!authentication.user">
+						<button type="submit" class="btn btn-success" onclick=location.href="/signup">Sign up</button>
+						<button type="submit" class="btn btn-success" onclick=location.href="/signin">Sign in</button>
+					</div>
+					<div data-ng-show="authentication.user">
+						<span style="color: #dddddd">Hello </span><span style="color: #dddddd" data-ng-bind="authentication.user.fullName"></span>
+						&nbsp&nbsp<button type="submit" class="btn btn-success" onclick=location.href="/signout">Sign out</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+
+	<div>
 	<h1>New Article</h1>
 	<!-- The new article form -->
 	<form data-ng-submit="create()" novalidate>
@@ -23,4 +51,5 @@
 			<strong data-ng-bind="error"></strong>
 		</div>
 	</form>
+		</div>
 </section>

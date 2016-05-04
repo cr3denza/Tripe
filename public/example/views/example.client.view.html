@@ -1,17 +1,124 @@
 <!-- The example view -->
 <section ng-controller="ExampleController">
 	<!-- If the user is not authenticated show the authentication link -->
-	<div data-ng-show="!authentication.user">
-		<a href="/signup">Signup</a>
-		<a href="/signin">Signin</a>
-	</div>
-	<!-- Otherwise, show the user details and application links -->
-	<div data-ng-show="authentication.user">
-		<h1>Hello <span data-ng-bind="authentication.user.fullName"></span></h1>	
-		<a href="/signout">Signout</a>
-		<ul>
-			<li><a href="/#!/articles">List Articles</a></li>
-			<li><a href="/#!/articles/create">Create Article</a></li>
-		</ul>
-	</div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/#!/">travel search</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right">
+                    <div data-ng-show="!authentication.user">
+                        <button type="submit" class="btn btn-success" onclick=location.href="/signup">Sign up</button>
+                        <button type="submit" class="btn btn-success" onclick=location.href="/signin">Sign in</button>
+                    </div>
+                    <div data-ng-show="authentication.user">
+                        <span style="color: #dddddd">Hello </span><span style="color: #dddddd" data-ng-bind="authentication.user.fullName"></span>
+                        &nbsp&nbsp<button type="submit" class="btn btn-success" onclick=location.href="/signout">Sign out</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Travel search</h1>
+            <p>Life is too short</p>
+
+            <div class="input-group">
+                <input type="text" class="form-control" aria-label="...">
+                <div class="input-group-btn">
+                    <!-- Button and dropdown menu -->
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default">여행검색</button>
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="#">여행검색</a></li>
+                            <li><a href="#">여행등록</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">search travel &raquo;</a></p>-->
+
+           <!-- <li><a href="/#!/articles">List Articles</a></li>
+            <li><a href="/#!/articles/create">Create Article</a></li>-->
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="..." alt="...">
+                    <div class="caption">
+                        <h2>fuck</h2>
+                        <p>fuckingman</p>
+                        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h2>fuck</h2>
+                        <p>fuckingman</p>
+                        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h2>fuck</h2>
+                        <p>fuckingman</p>
+                        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h2>fuck</h2>
+                        <p>fuckingman</p>
+                        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h2>fuck</h2>
+                        <p>fuckingman</p>
+                        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h2>fuck</h2>
+                        <p>fuckingman</p>
+                        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+    </div> <!-- /container -->
 </section>
