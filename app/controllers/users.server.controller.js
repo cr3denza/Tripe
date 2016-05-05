@@ -9,6 +9,7 @@ var User = require('mongoose').model('User'),
 var getErrorMessage = function(err) {
 	// Define the error message variable
 	var message = '';
+
 	// If an internal MongoDB error occurs get the error message
 	if (err.code) {
 		switch (err.code) {
