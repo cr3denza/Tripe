@@ -1,0 +1,60 @@
+tour_user.schema
+	email
+	nick
+	name
+	birth
+	address
+	mobile
+	mileage
+	photo
+
+plan_user.schma
+	email
+	nick
+	name
+	birth
+	address
+	mobile
+	mileage
+	plan_index
+	account
+	like
+	photo
+
+request.schema
+	creator	: user.email
+	created : date
+	travel_point : [string]
+	concept : [string]
+	start_day : date
+	end_day : date
+	plan_monay : integer
+	fee : integer
+	deadline : date
+	stage : integer
+	plan_index : [plan_schema_id]
+
+plan.schema
+	creator : user.email
+	created : date
+	date : [string]
+	point : [string]
+	trans : [string]
+	price : [string]
+	hotel : [string]
+	etc : [string]
+	1st_open : bool
+	select : bool
+
+review.schema
+	creator
+	created
+	request_index
+	plan_index
+	title
+	photo
+	contents : [string]
+	comment :
+	like
+	
+	
