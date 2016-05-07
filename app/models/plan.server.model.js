@@ -1,5 +1,5 @@
 /**
- * Created by cr3denza on 5/4/16.
+ * Created by cr3denza on 5/7/16.
  */
 
 // Invoke 'strict' JavaScript mode
@@ -11,26 +11,56 @@ var mongoose = require('mongoose'),
 
 // Define a new 'PlanSchema'
 var PlanSchema = new Schema({
+    creator: {
+        type: Schema.ObjectId,
+        ref: 'User'
+    },
     created: {
         type: Date,
         default: Date.now
     },
-    title: {
+    date: {
+        type: Date,
+        default: Date.now,
+        trim: true,
+        required: 'Title cannot be blank'
+    },
+    point: {
+        type: Number,
+        default: 0,
+        trim: true,
+        required: 'Title cannot be blank'
+    },
+    trans: {
         type: String,
         default: '',
         trim: true,
         required: 'Title cannot be blank'
     },
-    content: {
+    price: {
+        type: Number,
+        default: 0,
+        trim: true,
+        required: 'Title cannot be blank'
+    },
+    hotel: {
         type: String,
         default: '',
-        trim: true
+        trim: true,
+        required: 'Title cannot be blank'
     },
-    creator: {
-        type: Schema.ObjectId,
-        ref: 'User'
+    etc: {
+        type: String,
+        default: ''
+    },
+    open: {
+        type: Boolean,
+        default: false
+    },
+    select: {
+        type: Boolean,
+        default: false
     }
 });
-
 // Create the 'Article' model out of the 'ArticleSchema'
 mongoose.model('Plan', PlanSchema);
