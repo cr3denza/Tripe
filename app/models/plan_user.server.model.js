@@ -7,7 +7,7 @@ var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
 // Define a new 'UserSchema'
-var UserSchema = new Schema({
+var PlanUserSchema = new Schema({
 	firstName: String,
 	lastName: String,
 	email: {
@@ -106,10 +106,10 @@ UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
 };
 
 // Configure the 'UserSchema' to use getters and virtuals when transforming to JSON
-UserSchema.set('toJSON', {
+PlanUserSchema.set('toJSON', {
 	getters: true,
 	virtuals: true
 });
 
 // Create the 'User' model out of the 'UserSchema'
-mongoose.model('User', UserSchema);
+mongoose.model('PlanUser', PlanUserSchema);
