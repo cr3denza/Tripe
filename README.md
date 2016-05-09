@@ -1,5 +1,9 @@
 # Tripe
 fucking awesome travel plan market
+
+#plan db dummy 추가
+curl -X POST -H "Content-Type: application/json" -d '{"point":10, "trans":"bus", "price":1000, "hotel":"hotel california", "etc":"cr3denza", "open":false, "select":false}' localhost:3000/plans
+
 ##MEAN Stack File Tree
 ---
 >***app*** // 익스프레스 어플리케이션 논리를 유지하기 위한 공간  

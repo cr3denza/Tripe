@@ -13,7 +13,7 @@ var mongoose = require('mongoose'),
 var PlanSchema = new Schema({
     creator: {
         type: Schema.ObjectId,
-        ref: 'User'
+        ref: 'Plan'
     },
     created: {
         type: Date,
@@ -23,7 +23,7 @@ var PlanSchema = new Schema({
         type: Date,
         default: Date.now,
         trim: true,
-        required: 'Title cannot be blank'
+       // required: 'Title cannot be blank'
     },
     point: {
         type: Number,
@@ -62,5 +62,5 @@ var PlanSchema = new Schema({
         default: false
     }
 });
-// Create the 'Article' model out of the 'ArticleSchema'
+// Create the 'Plan' model out of the 'PlanSchema'
 mongoose.model('Plan', PlanSchema);
