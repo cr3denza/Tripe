@@ -5,5 +5,7 @@
 var plans = require('../../app/controllers/plans.server.controller');
 
 module.exports = function(app){
-    app.route('/plans').post(plans.create);
+    app.route('/plans')
+        .post(plans.create)
+        .get(plans.list);
 };

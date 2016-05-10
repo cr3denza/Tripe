@@ -15,3 +15,13 @@ exports.create = function(req, res, next){
         }
     });
 };
+
+exports.list = function(req, res, next){
+    Plan.find({}, function(err, plans){
+        if(err){
+            return next(err);
+        }else{
+            res.json(plans);
+        }
+    });
+}
